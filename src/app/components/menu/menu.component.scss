@@ -1,0 +1,69 @@
+@import '../../scss/colors.scss';
+
+.header {
+    background-color: $primary;
+    height: 60px;
+    border-bottom: 1px solid $secondary;
+    
+    .header-logo {
+        width: 200px;
+       
+        .title {
+            display: inline-block;
+            vertical-align: middle;
+            color: $secondary;
+            font-size: 20px;
+        }    
+    }
+
+    .header-menu {
+        width: calc(100% - 200px);
+
+        .navigation {
+            .nav-item {
+                color: $secondary;
+                text-decoration: none;
+    
+                &:active,
+                &:hover {
+                    transition: 300ms color ease-in;
+                    color: $selected;
+                }
+            }
+    
+            ul {
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+    
+                li {
+                    display: inline;
+    
+                    a {
+                        display: inline-block;
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Menu horizontal
+    .header-logo,
+    .header-menu,
+    .header-element {
+        display: inline-block;
+        height: 60px;
+        vertical-align: middle;
+    }
+
+    .header-element {
+        display: table;
+
+        .header-item {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}
+

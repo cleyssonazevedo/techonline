@@ -22,6 +22,8 @@ import { join } from 'path';
 import * as compression from 'compression';
 import * as helmet from 'helmet';
 
+import { RESPONSE } from '@nguniversal/express-engine/tokens';
+
 // Express server
 const app = express();
 
@@ -65,11 +67,26 @@ app.get('reports', (req, res) => {
   console.log(req.body['csp-report']);
   res.status(204).end();
 });
-app.get('*.*', express.static(DIST_FOLDER, { etag: true, maxAge: '1d' }));
+app.get('*.*', express.static(DIST_FOLDER, { etag: true, maxAge: '7d' }));
 
 // All regular routes use the Universal engine
-app.get('*', (req, res) => {
-  res.render('index', { req });
+app.get('*', async (req, res) => {
+  res.render('index', {
+    req,
+    res,
+    providers: [
+      {
+        provide: RESPONSE,
+        useValue: res
+      }
+    ]
+  }, (error, html) => {
+    if (error) {
+      return (req as any).next(error);
+    }
+
+    res.send(html);
+  });
 });
 
 // Start up the Node server

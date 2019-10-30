@@ -3,15 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot",
-    "build": "ng build --aot",
+    "start:dev": "ng serve --aot",
     "build:prod": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
-    "serve:ssr": "node dist/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "start": "node dist/server",
+    "build": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "npm run build:prod && ng run techonline:server:production --bundleDependencies all"
   },
   "private": true,

@@ -4,3 +4,7 @@
 
 @import './responsive-classes.scss';
 @import './icons.scss';
+
+body {
+    overflow-x: hidden;
+}

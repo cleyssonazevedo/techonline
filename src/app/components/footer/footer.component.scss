@@ -1,0 +1,41 @@
+@import '../../scss/colors.scss';
+
+.footer {
+    display: block;
+    height: 80px;
+
+    background-color: $primary;
+
+    .social-links {
+        text-align: right;
+
+        .icon {
+            margin-right: 7px;
+            font-size: 0px;
+        }
+    }
+
+    .link-email {
+        color: $secondary;
+        text-decoration: none;
+
+        &:hover,
+        &:visited,
+        &:active {
+            color: $secondary;
+            text-decoration: none;
+        }
+    }
+}
+
+.icon {
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+a:hover,
+a:visited,
+a:active {
+    cursor: pointer;
+}

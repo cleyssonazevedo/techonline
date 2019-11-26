@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:dev": "ng serve --aot",
-    "build:prod": "ng build --aot --prod",
+    "start:dev": "ng serve",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -28,6 +28,7 @@
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "compression": "^1.7.4",
     "express": "^4.15.2",
+    "font-awesome": "^4.7.0",
     "helmet": "^3.21.2",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

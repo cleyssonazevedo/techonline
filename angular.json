@@ -22,12 +22,13 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/nerd.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/scss/font-awesome.scss",
               "src/app/scss/styles.scss"
             ],
             "scripts": []
@@ -65,6 +66,7 @@
           }
         },
         "serve": {
+          "aot": true,
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "techonline:build"

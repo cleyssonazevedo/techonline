@@ -114,6 +114,42 @@
 .secondary-content {
     height: 100vh;
 
+    .text-subtitle {
+        display: block;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $color2;
+        font-weight: 600;
+        line-height: 1.25;
+        margin-bottom: 3px;
+    }
+
+    .subtitle {
+        display: block;
+        font-size: 72px;
+        font-weight: 400;
+        color: #262626;
+        line-height: 1.1;
+        margin-bottom: 35px;
+    }
+
+    .text-title {
+        display: block;
+        font-size: 16px;
+        color: #535353;
+        line-height: 1.75;
+        margin-bottom: 28px;
+    }
+
+    .text {
+        font-size: 14px;
+        line-height: 2;
+        font-weight: 400;
+        color: #535353;
+        margin-bottom: 60px;
+    }
+
+    .text-title,
     .text {
         width: 60%;   
     }

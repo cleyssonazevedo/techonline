@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/nerd.ico",
+              "src/nerd-v2.ico",
               "src/assets"
             ],
             "styles": [
@@ -91,7 +91,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/nerd.ico",
+              "src/nerd-v2.ico",
               "src/assets"
             ],
             "styles": [

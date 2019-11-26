@@ -60,22 +60,24 @@
             letter-spacing: 1.5px;
             color: $secondary;
         }
-    }
+    } 
 
     .card-list {
+        $card: 260px;
+
         position: absolute;
         bottom: -30px;
         left: 0;
         right: 0;
         z-index: 1;
-        max-height: 260px;
+        max-height: $card;
 
         .card {
             display: inline-block;
             vertical-align: bottom;
 
             width: 33.33333%;
-            height: 260px;
+            height: $card;
 
             .card-title,
             .card-body {
@@ -94,7 +96,6 @@
                 font-weight: 300;
                 letter-spacing: 0.2px;
             }
-
 
             &.primary {
                 background-color: #262626;

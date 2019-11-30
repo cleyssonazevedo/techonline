@@ -11,6 +11,7 @@ import localeBR from '@angular/common/locales/pt';
 import localeBRExtra from '@angular/common/locales/extra/pt';
 import { DefaultTemplateModule } from './templates/default-template/default-template.module';
 import { Page404Module } from './pages/404/page-404.module';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeBR, 'pt-BR', localeBRExtra);
 
@@ -23,7 +24,8 @@ registerLocaleData(localeBR, 'pt-BR', localeBRExtra);
     AppRoutingModule,
 
     DefaultTemplateModule,
-    Page404Module
+    Page404Module,
+    HttpClientModule
   ],
   providers: [
     {

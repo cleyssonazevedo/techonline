@@ -10,7 +10,7 @@ export class QuestionResolverService implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot) {
         const id = route.params.id;
-        console.log(route.params);
+        console.log('Params', route.params);
         return this.api.getData(id);
     }
 }

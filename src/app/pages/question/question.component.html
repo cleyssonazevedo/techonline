@@ -1,0 +1,50 @@
+<div class="main">
+    <div class="container main-body">
+        <h1>TechOnline</h1>
+        <h2>Tutoriais para acessar o seu computador</h2>
+    </div>
+</div>
+
+<div class="secondary-content">
+    <div class="d-table w-100 h-100">
+        <div class="d-table-cell align-middle">
+            <div class="container">
+                <ng-container *ngIf="checkIsRoot(); else others">
+                    <h3 class="subtitle">Qual problema seu computador está apresentando?</h3>
+
+                    <div class="card-list">
+                        <div class="card-item" *ngFor="let option of question" (click)="onClick(option)">
+                            <div class="triangle"></div>
+                            <div class="text" [innerHTML]="option.message"></div>
+                        </div>
+                    </div>
+                </ng-container>
+
+
+                <ng-template #others>
+                    <ng-container *ngIf="!question.final; else onlyText">
+                        <h3 class="subtitle" [innerHTML]="question.message"></h3>
+
+                        <div class="card-list">
+                            <div class="card-item" (click)="onClick(option)"
+                                *ngFor="let option of question.options; let index = index"
+                                [ngStyle]="{ 'margin-left.px' : index * 35 }">
+                                <div class="triangle"></div>
+                                <div class="text" [innerHTML]="option.message"></div>
+                            </div>
+                        </div>
+                    </ng-container>
+
+                    <ng-template #onlyText>
+                        <p class="final-text" [innerHTML]="question.message"></p>
+
+                        <div class="d-block btn-group">
+                            <button type="button" class="btn btn-primary" routerLink="/question">Buscar nova solução</button>
+                            <button type="button" class="btn btn-primary" routerLink="/">Voltar ao início</button>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

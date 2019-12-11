@@ -33,13 +33,19 @@
                                 <div class="text" [innerHTML]="option.message"></div>
                             </div>
                         </div>
+
+                        <div class="d-block btn-group" style="margin-top: 40px;">
+                            <button type="button" class="btn btn-primary" (click)="back()">Voltar</button>
+                            <button type="button" class="btn btn-primary" routerLink="/question">Buscar nova solução</button>
+                        </div>
                     </ng-container>
 
                     <ng-template #onlyText>
                         <p class="final-text" [innerHTML]="question.message"></p>
 
                         <div class="d-block btn-group">
-                            <button type="button" class="btn btn-primary" routerLink="/question">Buscar nova solução</button>
+                            <button type="button" class="btn btn-primary" routerLink="/question">Buscar nova
+                                solução</button>
                             <button type="button" class="btn btn-primary" routerLink="/">Voltar ao início</button>
                         </div>
                     </ng-template>

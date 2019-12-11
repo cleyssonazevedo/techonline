@@ -27,6 +27,11 @@ const routes: Routes = [
             loadChildren: () => import('./pages/question/question.module').then((m) => m.QuestionModule)
           }
         ]
+      },
+      {
+        path: 'contato',
+        pathMatch: 'full',
+        loadChildren: () => import('./pages/contato/contato.module').then((m) => m.ContatoModule)
       }
     ]
   },
@@ -39,8 +44,8 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     useHash: environment.production,
-    anchorScrolling: "enabled",
-    scrollPositionRestoration: "top"
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'top'
   })],
   exports: [RouterModule]
 })

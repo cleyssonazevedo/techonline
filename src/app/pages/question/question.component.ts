@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'app-question',
@@ -12,6 +13,7 @@ export class QuestionComponent {
 
     constructor(
         private readonly router: Router,
+        private readonly location: Location,
         readonly route: ActivatedRoute
     ) {
         route.data
@@ -24,10 +26,15 @@ export class QuestionComponent {
     }
 
     onClick(option: any) {
+        console.log('Clicked', option);
         if (option.options.lenght > 1) {
             this.router.navigate(['/question', option._id]);
         } else {
             this.router.navigate(['/question', option.options[0]]);
         }
+    }
+
+    back() {
+        this.location.back();
     }
 }

@@ -42,7 +42,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 300px;
+        bottom: 200px;
         text-align: center;
 
         h1 {
@@ -55,61 +55,19 @@
         }
 
         h2 {
+            display: inline-block;
             font-size: 23px;
             font-weight: 300;
             letter-spacing: 1.5px;
             color: $secondary;
+            max-width: 80%;
+            margin: auto;
         }
     } 
+}
 
-    .card-list {
-        $card: 260px;
-
-        position: absolute;
-        bottom: -30px;
-        left: 0;
-        right: 0;
-        z-index: 1;
-        max-height: $card;
-
-        .card {
-            display: inline-block;
-            vertical-align: bottom;
-
-            width: 33.33333%;
-            height: $card;
-
-            .card-title,
-            .card-body {
-                color: $secondary;
-                padding: 0 20px;
-            }
-
-            .card-title {
-                font-size: 20px;
-                display: block;
-                margin-bottom: 20px;
-                letter-spacing: 0.3px;
-            }
-
-            .card-body {
-                font-weight: 300;
-                letter-spacing: 0.2px;
-            }
-
-            &.primary {
-                background-color: #262626;
-            }
-
-            &.secondary {
-                background-color: #ef8702;
-            }
-
-            &.tertiary {
-                background-color: #ff9712;
-            }
-        }
-    }
+.secondary-content {
+    padding: 100px 0;
 }
 
 .form-group {

@@ -1,6 +1,7 @@
 @import './colors.scss';
 
 $button: #ff9910;
+$button2: rgb(240, 240, 240);
 
 .btn {
     position: relative;
@@ -52,6 +53,19 @@ $button: #ff9910;
         &:before {
             background-color: $button;
             border-color: $button;
+        }
+    }
+
+    &.btn-secondary {
+        $primary-color: darken($color: $button2, $amount: 5);
+
+        background-color: $primary-color;
+        color: $primary;
+        border-color: $primary-color;
+
+        &:before {
+            background-color: $button2;
+            border-color: $button2;
         }
     }
 }

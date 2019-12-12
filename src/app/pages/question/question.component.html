@@ -12,17 +12,21 @@
                 <ng-container *ngIf="checkIsRoot(); else others">
                     <h3 class="subtitle">Qual problema seu computador está apresentando?</h3>
 
-                    <form (submit)="searchText()" ngNativeValidate>
-                        <input type="text" class="form-control" placeholder="Buscar pelo problema" required [formControl]="search">
+                    <form (submit)="searchText()">
+                        <input type="text" class="form-control" placeholder="Buscar pelo problema" [formControl]="search">
                         <button type="submit" style="display: none;"></button>
                     </form>
 
-                    <div class="card-list">
+                    <div class="card-list" *ngIf="question && question.lenght > 0; else naoEncontrado">
                         <div class="card-item" *ngFor="let option of question" (click)="onClick(option)">
                             <div class="triangle"></div>
                             <div class="text" [innerHTML]="option.message"></div>
                         </div>
                     </div>
+
+                    <ng-template #naoEncontrado>
+                        <p style="margin-top: 30px; font-size: 20px;">Não foi encontrado conteúdo para a sua pesquisa.</p>
+                    </ng-template>
                 </ng-container>
 
 

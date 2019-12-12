@@ -14,7 +14,7 @@ export class ApiService {
 
     getData(id?: string, search?: string) {
         return this.http.get(`${this.url}/${id || ''}`, {
-            params: new HttpParams().append('search', search)
+            params: new HttpParams().set('search', search)
         });
     }
 }

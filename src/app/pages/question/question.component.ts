@@ -1,8 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
 import { Location } from '@angular/common';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -22,9 +21,8 @@ export class QuestionComponent implements OnDestroy {
         private readonly location: Location,
         readonly route: ActivatedRoute
     ) {
-        this.search = new FormControl(null, Validators.required);
+        this.search = new FormControl(null);
         this.subs1 = route.data
-            .pipe(tap(console.log))
             .subscribe((params) => this.question = params.data);
 
         this.subs2 = route.queryParams

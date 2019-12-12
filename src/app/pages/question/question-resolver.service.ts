@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 
@@ -10,7 +10,7 @@ export class QuestionResolverService implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot) {
         const id = route.params.id;
-        console.log('Params', route.params);
-        return this.api.getData(id);
+        const search = route.queryParams.search;
+        return this.api.getData(id, search);
     }
 }

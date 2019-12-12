@@ -12,7 +12,9 @@ export class ApiService {
         this.url = environment.url;
     }
 
-    getData(id?: string) {
-        return this.http.get(`${this.url}/${id || ''}`);
+    getData(id?: string, search?: string) {
+        return this.http.get(`${this.url}/${id || ''}`, {
+            params: new HttpParams().append('search', search)
+        });
     }
 }

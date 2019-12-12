@@ -1,4 +1,5 @@
 @import '../../scss/colors.scss';
+$active: #ff9711;
 
 .header {
     position: fixed;
@@ -21,31 +22,58 @@
     }
 
     .header-menu {
+        text-align: justify;
         width: calc(100% - 200px);
 
-        .navigation {
-            .nav-item {
-                color: $secondary;
-                text-decoration: none;
+        .header-element {
+            width: 100%;
+
+            .navigation {
+                .nav-item {
+                    color: $secondary;
+                    text-decoration: none;
+        
+                    &:active,
+                    &:hover {
+                        transition: 200ms color ease-in;
+                        color: $color1;
+                    }
     
-                &:active,
-                &:hover {
-                    transition: 300ms color ease-in;
-                    color: $color1;
+                    &.active {
+                        color: $active;
+                    }
                 }
-            }
+        
+                ul {
+                    padding: 0px;
+                    margin: 0px;
+                    list-style: none;
+        
+                    li {
+                        display: inline;
+        
+                        a {
+                            display: inline-block;
+                            padding: 0 20px;
+                        }
     
-            ul {
-                padding: 0px;
-                margin: 0px;
-                list-style: none;
+                    }
+                }
     
-                li {
-                    display: inline;
+                &.right {
+                    text-align: right;
     
-                    a {
-                        display: inline-block;
-                        padding: 0 20px;
+                    .btn-link {
+                        outline: none;
+                        background: transparent;
+                        border-color: $active;
+                        color: white;
+                        font-weight: 300;
+
+                        i {
+                            margin-right: 5px;
+                            color: $active;
+                        }
                     }
                 }
             }
@@ -71,3 +99,19 @@
     }
 }
 
+.box-search {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: top 300ms ease-in-out, ;
+
+    .form-control {
+        max-width: 300px;
+    }
+
+    &.active {
+        top: 65px;
+    }
+}

@@ -50,9 +50,20 @@ $button2: rgb(240, 240, 240);
         color: $secondary;
         border-color: $primary-color;
 
-        &:before {
+        &::before {
             background-color: $button;
             border-color: $button;
+        }
+
+        &[disabled],
+        &:disabled,
+        &.disabled {
+            cursor: not-allowed;
+
+            &::before {
+                background-color: transparent;
+                border-color: transparent;
+            }
         }
     }
 

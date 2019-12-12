@@ -16,12 +16,32 @@
             <div class="header-element">
                 <nav class="navigation header-item">
                     <ul>
-                        <li><a class="nav-item" routerLink="/" routerLinkActive="active">Home</a></li>
+                        <li><a class="nav-item" routerLink="/" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
                         <li><a class="nav-item" routerLink="/sobre" routerLinkActive="active">Sobre nós</a></li>
                         <li><a class="nav-item" routerLink="/contato" routerLinkActive="active">Contato</a></li>
                     </ul>
                 </nav>
+                <nav class="navigation header-item right">
+                    <ul>
+                        <li>
+                            <button type="button" class="btn btn-link" (click)="activeButton()" [class.active]="active">
+                                <i class="fa fa-search" aria-hidden="false"></i>
+                                Buscar solução
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="box-search" [class.active]="active">
+    <div class="container">
+        <form (submit)="pesquisar()" ngNativeValidate>
+            <input type="text" name="search" id="search" class="form-control pull-right" placeholder="Digite sua dúvida" [formControl]="searchText" required>
+            <button type="submit" style="display: none;"></button>
+        </form>
     </div>
 </div>

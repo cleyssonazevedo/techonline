@@ -13,8 +13,12 @@ export class ApiService {
     }
 
     getData(id?: string, search?: string) {
-        return this.http.get(`${this.url}/${id || ''}`, {
-            params: new HttpParams().set('search', search)
-        });
+        let params = new HttpParams();
+
+        if (search) {
+            params = params.set('search', search);
+        }
+
+        return this.http.get(`${this.url}/${id || ''}`, { params });
     }
 }

@@ -17,7 +17,7 @@
                         <button type="submit" style="display: none;"></button>
                     </form>
 
-                    <div class="card-list" *ngIf="question && question.lenght > 0; else naoEncontrado">
+                    <div class="card-list" *ngIf="question && question.length > 0; else naoEncontrado">
                         <div class="card-item" *ngFor="let option of question" (click)="onClick(option)">
                             <div class="triangle"></div>
                             <div class="text" [innerHTML]="option.message"></div>

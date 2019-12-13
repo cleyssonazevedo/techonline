@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -17,10 +17,12 @@ export class MenuComponent {
         this.searchText = new FormControl(null, Validators.required);
     }
 
-    activeButton() {
+    activeButton(input: HTMLInputElement) {
         if (this.active) {
             // Alternando de ligado para desligado
             this.searchText.reset();
+        } else {
+            input.focus();
         }
 
         this.active = !this.active;
@@ -32,9 +34,11 @@ export class MenuComponent {
 
             if (value && value !== '' && value.trim() !== '') {
                 this.router.navigate(['/tutoriais'], {
+                    preserveFragment: false,
                     queryParams: {
                         busca: value
-                    }
+                    },
+                    fragment: 'pesquisa'
                 });
             } else {
                 this.router.navigate(['/tutoriais'], {

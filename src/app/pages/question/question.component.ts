@@ -46,6 +46,7 @@ export class QuestionComponent implements OnDestroy {
 
         if (value && value !== '' && value.trim() !== '') {
             this.router.navigate(['/tutoriais'], {
+                preserveFragment: false,
                 queryParams: {
                     busca: value
                 },

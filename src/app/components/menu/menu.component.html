@@ -25,7 +25,7 @@
                 <nav class="navigation header-item right">
                     <ul>
                         <li>
-                            <button type="button" class="btn btn-link" (click)="activeButton()" [class.active]="active">
+                            <button type="button" class="btn btn-link" (click)="activeButton(inputBox)" [class.active]="active">
                                 <i class="fa fa-search" aria-hidden="false"></i>
                                 Buscar solução
                             </button>
@@ -40,7 +40,7 @@
 <div class="box-search" [class.active]="active">
     <div class="container">
         <form (submit)="pesquisar()" ngNativeValidate>
-            <input type="text" name="search" id="search" class="form-control pull-right" placeholder="Digite sua dúvida" [formControl]="searchText" required>
+            <input type="text" name="search" id="search" class="form-control pull-right" placeholder="Digite sua dúvida" [formControl]="searchText" required #inputBox>
             <button type="submit" style="display: none;"></button>
         </form>
     </div>

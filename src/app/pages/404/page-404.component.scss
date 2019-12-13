@@ -2,7 +2,7 @@
 
 .main {
     position: relative;
-    background-image: url('/assets/img/sobre.jpg');
+    background-image: url('/assets/img/404.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -83,5 +83,9 @@
         margin-bottom: 15px;
         line-height: 24px;
         font-weight: 400;
+    }
+
+    button {
+        margin-top: 40px;
     }
 }

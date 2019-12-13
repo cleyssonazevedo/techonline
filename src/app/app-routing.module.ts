@@ -32,6 +32,11 @@ const routes: Routes = [
         path: 'contato',
         pathMatch: 'full',
         loadChildren: () => import('./pages/contato/contato.module').then((m) => m.ContatoModule)
+      },
+      {
+        path: 'sobre',
+        pathMatch: 'full',
+        loadChildren: () => import('./pages/sobre/sobre.module').then((m) => m.SobreModule)
       }
     ]
   },

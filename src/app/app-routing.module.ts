@@ -41,8 +41,12 @@ const routes: Routes = [
     ]
   },
   {
+    path: '500',
+    loadChildren: () => import('./pages/500/page-500.module').then((m) => m.Page500Module)
+  },
+  {
     path: '**',
-    component: Page404Component
+    loadChildren: () => import('./pages/404/page-404.module').then((m) => m.Page404Module)
   }
 ];
 

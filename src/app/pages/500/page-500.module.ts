@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Page404Component } from './page-404.component';
+import { Page500Component } from './page-500.component';
 
 @NgModule({
     imports: [
@@ -9,10 +9,10 @@ import { Page404Component } from './page-404.component';
         RouterModule.forChild([
             {
                 path: '',
-                component: Page404Component
+                component: Page500Component
             }
         ])
     ],
-    declarations: [ Page404Component ]
+    declarations: [ Page500Component ]
 })
-export class Page404Module {  }
+export class Page500Module {  }

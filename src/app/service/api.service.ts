@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
     private readonly url: string;
 
     constructor(
-        private readonly http: HttpClient
+        private readonly http: HttpClient,
+        private readonly router: Router
     ) {
         this.url = environment.url;
     }
@@ -19,7 +22,13 @@ export class ApiService {
             params = params.set('search', search);
         }
 
-        return this.http.get(`${this.url}/${id || ''}`, { params });
+        return this.http.get(`${this.url}/${id || ''}`, { params })
+            .pipe(
+                catchError((error) => {
+                    this.router.navigate(['/500']);
+                    throw error;
+                })
+            );
     }
 
     saveContato(contato: { nome?: string, email?: string, assunto: string, mensagem: string }) {

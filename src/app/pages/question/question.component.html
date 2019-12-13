@@ -1,7 +1,9 @@
 <div class="main">
-    <div class="container main-body">
-        <h1>TechOnline</h1>
-        <h2>Tutoriais para acessar o seu computador</h2>
+    <div class="container">
+        <div class="main-body">
+            <h1>TechOnline</h1>
+            <h2>Tutoriais para acessar o seu computador</h2>
+        </div>
     </div>
 </div>
 
@@ -12,7 +14,7 @@
                 <ng-container *ngIf="checkIsRoot(); else others">
                     <h3 class="subtitle">Qual problema seu computador está apresentando?</h3>
 
-                    <form (submit)="searchText()">
+                    <form (submit)="searchText()" id="pesquisa" #pesquisa>
                         <input type="text" class="form-control" placeholder="Buscar pelo problema" [formControl]="search">
                         <button type="submit" style="display: none;"></button>
                     </form>
@@ -45,7 +47,7 @@
 
                         <div class="d-block btn-group" style="margin-top: 40px;">
                             <button type="button" class="btn btn-primary" (click)="back()">Voltar</button>
-                            <button type="button" class="btn btn-primary" routerLink="/question">Buscar nova solução</button>
+                            <button type="button" class="btn btn-primary" routerLink="/tutoriais">Buscar nova solução</button>
                         </div>
                     </ng-container>
 
@@ -53,7 +55,7 @@
                         <p class="final-text" [innerHTML]="question.message"></p>
 
                         <div class="d-block btn-group">
-                            <button type="button" class="btn btn-primary" routerLink="/question">Buscar nova
+                            <button type="button" class="btn btn-primary" routerLink="/tutoriais">Buscar nova
                                 solução</button>
                             <button type="button" class="btn btn-primary" routerLink="/">Voltar ao início</button>
                         </div>

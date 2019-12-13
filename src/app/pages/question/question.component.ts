@@ -26,7 +26,7 @@ export class QuestionComponent implements OnDestroy {
             .subscribe((params) => this.question = params.data);
 
         this.subs2 = route.queryParams
-            .subscribe((params) => this.search.setValue(params.search));
+            .subscribe((params) => this.search.setValue(params.busca));
     }
 
     checkIsRoot() {
@@ -35,18 +35,29 @@ export class QuestionComponent implements OnDestroy {
 
     onClick(option: any) {
         if (option.options.lenght > 1) {
-            this.router.navigate(['/question', option._id]);
+            this.router.navigate(['/tutoriais', option._id]);
         } else {
-            this.router.navigate(['/question', option.options[0]]);
+            this.router.navigate(['/tutoriais', option.options[0]]);
         }
     }
 
     searchText() {
-        this.router.navigate(['/question'], {
-            queryParams: {
-                search: this.search.value
-            }
-        });
+        const { value } = this.search as { value: string };
+
+        if (value && value !== '' && value.trim() !== '') {
+            this.router.navigate(['/tutoriais'], {
+                queryParams: {
+                    busca: value
+                },
+                fragment: 'pesquisa'
+            });
+        } else {
+            this.router.navigate(['/tutoriais'], {
+                queryParams: {
+                    busca: null
+                }
+            });
+        }
     }
 
     back() {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-menu',
@@ -10,7 +11,9 @@ export class MenuComponent {
     active: boolean;
     searchText: FormControl;
 
-    constructor() {
+    constructor(
+        private readonly router: Router
+    ) {
         this.searchText = new FormControl(null, Validators.required);
     }
 
@@ -25,7 +28,23 @@ export class MenuComponent {
 
     pesquisar() {
         if (this.searchText.valid) {
-            console.log('Pesquisar por', this.searchText.value);
+            const { value } = this.searchText as { value: string };
+
+            if (value && value !== '' && value.trim() !== '') {
+                this.router.navigate(['/tutoriais'], {
+                    queryParams: {
+                        busca: value
+                    }
+                });
+            } else {
+                this.router.navigate(['/tutoriais'], {
+                    queryParams: {
+                        busca: null
+                    }
+                });
+            }
+
+            this.active = false;
         }
     }
 }

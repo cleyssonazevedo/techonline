@@ -62,7 +62,9 @@
         <form (submit)="pesquisar()" ngNativeValidate>
             <input type="text" name="search" id="search" class="form-control pull-right" placeholder="Digite sua dúvida"
                 [formControl]="searchText" required #inputBox>
-            <button type="submit" style="display: none;"></button>
+            <button type="submit" class="btn-search" title="Pesquisar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
         </form>
     </div>
 </div>

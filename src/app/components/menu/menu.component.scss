@@ -105,13 +105,32 @@ $active: #ff9711;
     top: 0;
     left: 0;
     right: 0;
-    transition: top 300ms ease-in-out, ;
+    transition: top 300ms ease-in-out;
+
+    form {
+        position: relative;
+    }
 
     .form-control {
         max-width: 300px;
+
+        position: absolute;
+        right: 40px;
     }
 
     &.active {
         top: 65px;
+    }
+
+    .btn-search {
+        position: absolute;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        z-index: 1;
+        background: transparent;
+        border-color: transparent;
+        color: white;
+        cursor: pointer;
     }
 }

@@ -61,55 +61,6 @@
             color: $secondary;
         }
     } 
-
-    .card-list {
-        $card: 260px;
-
-        position: absolute;
-        bottom: -30px;
-        left: 0;
-        right: 0;
-        z-index: 1;
-        max-height: $card;
-
-        .card {
-            display: inline-block;
-            vertical-align: bottom;
-
-            width: 33.33333%;
-            height: $card;
-
-            .card-title,
-            .card-body {
-                color: $secondary;
-                padding: 0 20px;
-            }
-
-            .card-title {
-                font-size: 20px;
-                display: block;
-                margin-bottom: 20px;
-                letter-spacing: 0.3px;
-            }
-
-            .card-body {
-                font-weight: 300;
-                letter-spacing: 0.2px;
-            }
-
-            &.primary {
-                background-color: #262626;
-            }
-
-            &.secondary {
-                background-color: #ef8702;
-            }
-
-            &.tertiary {
-                background-color: #ff9712;
-            }
-        }
-    }
 }
 
 .secondary-content {
@@ -123,6 +74,19 @@
         color: #262626;
         line-height: 1.1;
         margin-bottom: 35px;
+    }
+
+    .help-title {
+        font-size: 20px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        margin-top: -10px;
+    }
+
+    .help-text {
+        font-weight: 300;
+        letter-spacing: 0.3px;
+        line-height: 20px;
     }
 
     .card-list {

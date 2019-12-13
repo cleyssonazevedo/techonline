@@ -35,6 +35,10 @@
                 <ng-template #others>
                     <ng-container *ngIf="!question.final; else onlyText">
                         <h3 class="subtitle" [innerHTML]="question.message"></h3>
+                        <ng-container *ngIf="question.helpMessage">
+                            <h4 class="help-title" [innerHTML]="question.helpMessage.title"></h4>
+                            <p class="help-text" [innerHTML]="question.helpMessage.message"></p>
+                        </ng-container>
 
                         <div class="card-list">
                             <div class="card-item" (click)="onClick(option)"

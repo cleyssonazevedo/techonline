@@ -45,6 +45,7 @@ export class MenuComponent {
             }
 
             this.active = false;
+            this.searchText.reset();
         }
     }
 }
